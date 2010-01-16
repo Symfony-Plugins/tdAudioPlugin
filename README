@@ -1,0 +1,45 @@
+tdGuestbookPlugin
+======================
+
+Provides funcionalities for a standard guestbook.
+
+This plugin is a part of __TD CMS__ and is based on __Doctrine ORM__.
+
+Installation
+============
+
+Install the plugin via the subversion repository by executing the following
+command from the project root directory:
+
+    $ svn co http://svn.symfony-project.com/plugins/tdGuestbookPlugin/trunk plugins/tdGuestbookPlugin
+
+or by using the default symfony plugin install command:
+
+    $ ./symfony plugin:install -s beta tdGuestbookPlugin
+
+as the actual release is in its beta stage.
+
+Usage
+=====
+
+Configuration
+=============
+
+You can modify settings of the tdGuestbookPlugin in the
+__config/tdGUestbookPluginConfiguration.class.php__ file:
+
+  * _td_guestbook_entries_per_page_ - number of guestbook entries shown on each
+    page.
+
+Translations
+============
+
+You may translate tdGuestbook module to your own language by creating
+__td_guestbook.XX.xml__ file under _modules/tdGuestbook/i18n_
+directory (where XX is the language code). So far, English language is the
+default one and additionally Polish translationis provided.
+
+Dependencies
+============
+
+  * [tdCorePlugin](http://www.symfony-project.org/plugins/tdCorePlugin)

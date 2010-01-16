@@ -1,0 +1,12 @@
+td_sample_track_album:
+  url:   /sample-track-album
+  param: { module: tdSampleTrackAlbum, action: index }
+
+td_track_album:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                tdTrackAlbum
+    module:               td_track_album
+    prefix_path:          /td_track_album
+    column:               id
+    with_wildcard_routes: true

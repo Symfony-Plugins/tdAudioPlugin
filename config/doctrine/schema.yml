@@ -1,0 +1,55 @@
+options:
+  charset: utf8
+  collate: utf8_general_ci
+
+tdTrack:
+  actAs:
+    Timestampable: ~
+  columns:
+    td_track_album_id:
+      type: integer
+      notnull: true
+    file:
+      type: string(255)
+      notnull: true
+    title:
+      type: string(64)
+      notnull: true
+    description:
+      type: clob
+    position:
+      type: tinyint
+      notnull: true
+  indexes:
+    unique_album_track_position:
+      type: unique
+      fields: [ td_track_album_id, position ]
+  relations:
+    Album:
+      class: tdTrackAlbum
+      local: td_track_album_id
+      foreign: id
+      foreignAlias: Tracks
+
+tdTrackAlbum:
+  actAs:
+    Timestampable: ~
+  columns:
+    name:
+      type: string
+      notnull: true
+    author:
+      type: string(128)
+      notnull: true
+    place:
+      type: string(128)
+    released_at:
+      type: timestamp
+    description:
+      type: clob
+    file_cover:
+      type: string(255)
+    active:
+      type: boolean
+      notnull: true
+      default: true
