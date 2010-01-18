@@ -25,7 +25,7 @@ class PlugintdTrackAlbumTable extends Doctrine_Table
   {
     return Doctrine_Query::create()
              ->from('tdTrackAlbum a')
-             ->where('a.id = ?', $file)
+             ->where('a.id = ?', $id)
              ->andWhere('a.active = "1"');
   }
 }

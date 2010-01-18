@@ -1,0 +1,133 @@
+tdTrackAlbum:
+
+  sample_cartoons:
+    name: Sample Cartoons
+    author: simplythebest.net
+    place: http://simplythebest.net/sounds/MP3/cartoon_mp3.html
+    released_at: 2008-12-24
+    description: Some sample cartoon mp3 files put together into an album
+    file_cover: cartoon.png
+    active: true
+
+  sample_movies:
+    name: Sample movies
+    author: simplythebest.net
+    place: http://simplythebest.net/sounds/MP3/movie_mp3.html
+    released_at: 1978-07-12
+    description: Some sample movie mp3 files put together into an album
+    file_cover: movie.png
+    active: true
+
+tdTrack:
+
+  cartoon_aladdin_goodbye:
+    Album: sample_cartoons
+    file: aladdin_goodbye.mp3
+    title: Aladdin Goodbye
+    description: Sample Aladdin Goodbye mp3 file
+    position: 1
+
+  cartoon_bugs_mail:
+    Album: sample_cartoons
+    file: bugs_mail.mp3
+    title: Bugs Mail
+    description: Sample Bug Mail mp3 file
+    position: 2
+
+  cartoon_cant_takeit:
+    Album: sample_cartoons
+    file: cant_takeit.mp3
+    title: Can\'t take it
+    description: Sample Can\'t take it mp3 file
+    position: 3
+
+  cartoon_doh:
+    Album: sample_cartoons
+    file: doh.mp3
+    title: Doh
+    description: Sample Doh mp3 file
+    position: 4
+
+  cartoon_hello_butthead:
+    Album: sample_cartoons
+    file: hello_butthead.mp3
+    title: Helo Butthead
+    description: Sample Hello Butthead mp3 file
+    position: 5
+
+  cartoon_mail_here:
+    Album: sample_cartoons
+    file: mail_here.mp3
+    title: Mail Here
+    description: Sample Mail Here mp3 file
+    position: 6
+
+  cartoon_beback:
+    Album: sample_movies
+    file: beback.mp3
+    title: Be Back
+    description: Sample Be Back mp3 file
+    position: 1
+
+  cartoon_big_trouble:
+    Album: sample_movies
+    file: big_trouble.mp3
+    title:  Big Trouble
+    description: Sample Big Trouble mp3 file
+    position: 2
+
+  cartoon_concentration:
+    Album: sample_movies
+    file: concentration.mp3
+    title:  Concentration
+    description: Sample Concentration mp3 file
+    position: 3
+
+  cartoon_correctamundo:
+    Album: sample_movies
+    file: correctamundo.mp3
+    title: Correctamundo
+    description: Sample Correctamundo mp3 file
+    position: 4
+
+  cartoon_drink_babe:
+    Album: sample_movies
+    file: drink_babe.mp3
+    title:  Drink babe
+    description: Sample Drink Babe mp3 file
+    position: 5
+
+  cartoon_end_of_story:
+    Album: sample_movies
+    file: end_of_story
+    title: End of Story
+    description: Sample End of Story mp3 file
+    position: 6
+
+  cartoon_gameover:
+    Album: sample_movies
+    file: gameover.mp3
+    title: Game Over
+    description: Sample Game Over mp3 file
+    position: 7
+
+  cartoon_going_to_do:
+    Album: sample_movies
+    file: going_to_do.mp3
+    title: Going to do
+    description: Sample Going to do mp3 file
+    position: 8
+
+  cartoon_good_morning_vietnam:
+    Album: sample_movies
+    file: good_morning_vietnam.mp3
+    title: Good Morning Vietnam
+    description: Sample Good Morning Vietnam mp3 file
+    position: 9
+
+  cartoon_hard_time:
+    Album: sample_movies
+    file: hard_time.mp3
+    title: Hard Time
+    description: Sample Hard Time mp3 file
+    position:

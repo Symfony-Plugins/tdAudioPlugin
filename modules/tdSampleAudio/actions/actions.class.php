@@ -17,11 +17,11 @@ class tdSampleAudioActions extends sfActions
 
   public function executeShow(sfWebRequest $request)
   {
-    $results = Doctrine::getTable('tdTrackAlbum')->getActiveAlbumByIdQuery($request->getParameter('file'))->fetchArray();
+    $results = Doctrine::getTable('tdTrackAlbum')->getActiveAlbumByIdQuery($request->getParameter('id'))->fetchArray();
     $this->audio = $results[0];
 
     // adding js flash embedding script
-    $this->getResponse()->addJavascript('/tdAudioPlugin/?');
+    $this->getResponse()->addJavascript('/tdAudioPlugin/js/swfobject.js');
 
     // adding default flowplayer stylesheet
     $this->getResponse()->addStylesheet('/tdAudioPlugin/?');

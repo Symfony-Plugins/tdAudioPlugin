@@ -1,6 +1,10 @@
 td_sample_track_album:
-  url:   /sample-track-album
-  param: { module: tdSampleTrackAlbum, action: index }
+  url:   /audio
+  param: { module: tdSampleAudio, action: index }
+
+td_sample_track_album_show:
+  url:   /audio/:id
+  param: { module: tdSampleAudio, action: show }
 
 td_track_album:
   class: sfDoctrineRouteCollection

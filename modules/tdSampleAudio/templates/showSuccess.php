@@ -4,8 +4,13 @@
 
 <?php use_helper('Video', 'Date') ?>
 
-    <h1><?php echo $video['name'] ?></h1>
-    <p><?php echo __('Author', array(), 'td').': '.$video['author'] ?></p>
-    <p><?php echo __('Recorded at', array(), 'td').': '.(false !== strtotime($video['recorded_at']) ? format_date($video['recorded_at'], "f") : '&nbsp;') ?></p>
-    <p><?php echo __('Description', array(), 'td').': '.$video['description'] ?></p>
+<div id="flashPlayer">
+  This text will be replaced by the flash music player.
+</div>
 
+<script type="text/javascript">
+   var so = new SWFObject("/tdAudioPlugin/swf/playerMultipleList.swf", "mymovie", "295", "200", "7", "#FFFFFF");
+   so.addVariable("autoPlay","no")
+   so.addVariable("playlistPath","/tdAudioPlugin/mp3/playlist.xml")
+   so.write("flashPlayer");
+</script>
