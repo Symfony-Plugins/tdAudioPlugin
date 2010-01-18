@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xml>
 	<track>
-		<path>/tdVideoPlugin/mp3/aladdin_goodbye.mp3</path>
+		<path>/tdAudioPlugin/mp3/aladdin_goodbye.mp3</path>
 		<title>Track 1 - Aladdin Goodbye</title>
 	</track>
 	<track>

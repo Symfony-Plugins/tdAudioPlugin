@@ -6,6 +6,10 @@ td_sample_track_album_show:
   url:   /audio/:id
   param: { module: tdSampleAudio, action: show }
 
+td_sample_track_album_show_xml:
+  url:   /audio/xml/:id.xml
+  param: { module: tdSampleAudio, action: albumXMLInfo }
+
 td_track_album:
   class: sfDoctrineRouteCollection
   options:

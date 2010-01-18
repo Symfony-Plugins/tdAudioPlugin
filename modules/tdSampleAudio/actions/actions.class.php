@@ -26,4 +26,26 @@ class tdSampleAudioActions extends sfActions
     // adding default flowplayer stylesheet
     $this->getResponse()->addStylesheet('/tdAudioPlugin/?');
   }
+
+  /**
+   * Generates XML file for a track album to be passed to the premiumbeat player.
+   * 
+   */
+  public function executeAlbumXMLInfo(sfWebRequest $request)
+  {
+    $tracks = Doctrine::getTable('tdTrack')->getAllAlbumTracksByIdSortedQuery($request->getParameter('id'))->fetchArray();
+
+    $this->getResponse()->setContentType('text/xml');
+    $xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
+    $xml .= "<xml>\n";
+    foreach ($tracks as $track)
+    {
+        $xml .= "    <track>\n";
+        $xml .= "       <path>/tdAudioPlugin/mp3/{$track['file']}</path>\n";
+        $xml .= "       <title>Track {$track['position']} - {$track['title']}</title>\n";
+        $xml .= "   </track>\n";
+    }
+    $xml .= "</xml>\n";
+    return $this->renderText($xml);
+  }
 }

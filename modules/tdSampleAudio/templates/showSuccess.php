@@ -11,6 +11,6 @@
 <script type="text/javascript">
    var so = new SWFObject("/tdAudioPlugin/swf/playerMultipleList.swf", "mymovie", "295", "200", "7", "#FFFFFF");
    so.addVariable("autoPlay","no")
-   so.addVariable("playlistPath","/tdAudioPlugin/mp3/playlist.xml")
+   so.addVariable("playlistPath",<?php echo url_for('@td_sample_track_album_show_xml?id=1') ?>)
    so.write("flashPlayer");
 </script>
