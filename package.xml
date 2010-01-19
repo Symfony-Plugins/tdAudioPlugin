@@ -51,6 +51,9 @@
            <file name="PlugintdGuestbookForm.class.php" role="data" />
          </dir>
        </dir>
+       <dir name="helper">
+         <file name="AudioHelper.php" role="data" />
+       </dir>
        <dir name="model">
          <dir name="doctrine">
            <file name="PlugintdGuestbook.class.php" role="data" />
@@ -86,6 +89,43 @@
        </dir>
      </dir>
 
+     <dir name="web">
+       <dir name="css">
+         <file name="td_audio.css" role="data" />
+       </dir>
+       <dir name="images">
+         <file name="cartoon.png" role="data" />
+         <file name="movie.png" role="data" />
+       </dir>
+       <dir name="js">
+	 <file name="flowplayer-3.1.4.min.js" role="data" />
+       </dir>
+       <dir name="mp3">
+	 <file name="aladdin_goodbye.mp3" role="data" />
+	 <file name="beback.mp3" role="data" />
+	 <file name="big_trouble.mp3" role="data" />
+	 <file name="bugs_mail.mp3" role="data" />
+	 <file name="cant_takeit.mp3" role="data" />
+	 <file name="concentration.mp3" role="data" />
+	 <file name="correctamundo.mp3" role="data" />
+	 <file name="doh.mp3" role="data" />
+	 <file name="drink_babe.mp3" role="data" />
+	 <file name="end_of_story.mp3" role="data" />
+	 <file name="gameover.mp3" role="data" />
+	 <file name="going_to_do.mp3" role="data" />
+	 <file name="good_morning_vietnam.mp3" role="data" />
+	 <file name="hard_time.mp3" role="data" />
+	 <file name="hello_butthead.mp3" role="data" />
+	 <file name="mail_here.mp3" role="data" />
+	 <file name="example_playlist.xml" role="data" />
+       </dir>
+       <dir name="swf">
+         <file name="playerMultipleList.swf" role="data" />
+         <file name="playerMultipleList_old.swf" role="data" />
+       </dir>
+     </dir>
+
+     <file name="PlayerLicense.doc" role="data" />
      <file name="LICENSE" role="data" />
      <file name="README" role="data" />
    </dir>

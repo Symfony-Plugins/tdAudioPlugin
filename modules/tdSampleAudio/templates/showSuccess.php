@@ -2,7 +2,7 @@
 
 <h1>Album</h1>
 
-<?php use_helper('Video', 'Date') ?>
+<?php use_helper('Audio', 'Date') ?>
 
 <div id="flashPlayer">
   This text will be replaced by the flash music player.
