@@ -1,11 +1,12 @@
+<?php $generator = new tdRandomDataGenerator(); ?>
 tdTrackAlbum:
 
   sample_cartoons:
     name: Sample Cartoons
     author: simplythebest.net
     place: http://simplythebest.net/sounds/MP3/cartoon_mp3.html
-    released_at: 2008-12-24
-    description: Some sample cartoon mp3 files put together into an album
+    released_at: <?php echo $generator->getRandomCreatedAt(2000 + mt_rand(1,9))."\n" ?>
+    description: Some sample cartoon mp3 files put together into an album. <?php echo $generator->getRandomText(300 + mt_rand(20,100)*mt_rand(1,5))."\n" ?>
     file_cover: cartoon.png
     active: true
 
@@ -13,8 +14,8 @@ tdTrackAlbum:
     name: Sample movies
     author: simplythebest.net
     place: http://simplythebest.net/sounds/MP3/movie_mp3.html
-    released_at: 1978-07-12
-    description: Some sample movie mp3 files put together into an album
+    released_at: <?php echo $generator->getRandomCreatedAt(2000 + mt_rand(1,9))."\n" ?>
+    description: Some sample movie mp3 files put together into an album. <?php echo $generator->getRandomText(300 + mt_rand(20,100)*mt_rand(1,5))."\n" ?>
     file_cover: movie.png
     active: true
 
@@ -62,72 +63,58 @@ tdTrack:
     description: Sample Mail Here mp3 file
     position: 6
 
-  cartoon_beback:
+  movie_beback:
     Album: sample_movies
     file: beback.mp3
     title: Be Back
     description: Sample Be Back mp3 file
     position: 1
 
-  cartoon_big_trouble:
+  movie_big_trouble:
     Album: sample_movies
     file: big_trouble.mp3
     title:  Big Trouble
     description: Sample Big Trouble mp3 file
     position: 2
 
-  cartoon_concentration:
+  movie_concentration:
     Album: sample_movies
     file: concentration.mp3
     title:  Concentration
     description: Sample Concentration mp3 file
     position: 3
 
-  cartoon_correctamundo:
+  movie_correctamundo:
     Album: sample_movies
     file: correctamundo.mp3
     title: Correctamundo
     description: Sample Correctamundo mp3 file
     position: 4
 
-  cartoon_drink_babe:
-    Album: sample_movies
-    file: drink_babe.mp3
-    title:  Drink babe
-    description: Sample Drink Babe mp3 file
-    position: 5
-
-  cartoon_end_of_story:
-    Album: sample_movies
-    file: end_of_story
-    title: End of Story
-    description: Sample End of Story mp3 file
-    position: 6
-
-  cartoon_gameover:
+  movie_gameover:
     Album: sample_movies
     file: gameover.mp3
     title: Game Over
     description: Sample Game Over mp3 file
-    position: 7
+    position: 5
 
-  cartoon_going_to_do:
+  movie_going_to_do:
     Album: sample_movies
     file: going_to_do.mp3
     title: Going to do
     description: Sample Going to do mp3 file
-    position: 8
+    position: 6
 
-  cartoon_good_morning_vietnam:
+  movie_good_morning_vietnam:
     Album: sample_movies
     file: good_morning_vietnam.mp3
     title: Good Morning Vietnam
     description: Sample Good Morning Vietnam mp3 file
-    position: 9
+    position: 7
 
-  cartoon_hard_time:
+  movie_hard_time:
     Album: sample_movies
     file: hard_time.mp3
     title: Hard Time
     description: Sample Hard Time mp3 file
-    position:
+    position: 8

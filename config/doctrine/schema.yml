@@ -36,7 +36,7 @@ tdTrackAlbum:
     Timestampable: ~
   columns:
     name:
-      type: string
+      type: string(128)
       notnull: true
     author:
       type: string(128)

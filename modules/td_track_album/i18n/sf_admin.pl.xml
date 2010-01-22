@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd" >
+<xliff version="1.0">
+  <file original="global" source-language="en" datatype="plaintext">
+    <header />
+    <body>
+      <!-- Help fields -->
+      <trans-unit>
+        <source>if the link shall be visible on the frontend website</source>
+        <target>czy link ma być widoczny na stronie www</target>
+      </trans-unit>
+
+      <!-- Object/Batch Actions -->
+      <trans-unit>
+        <source>Activate</source>
+        <target>Aktywuj</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Deactivate</source>
+        <target>Deaktywuj</target>
+      </trans-unit>
+
+      <!-- Actions -->
+      <trans-unit>
+        <source>Track album list</source>
+        <target>Lista albumów audio</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Edit track album</source>
+        <target>Edytuj album audio</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New track album</source>
+        <target>Nowy album audio</target>
+      </trans-unit>
+
+      <!-- Flashes -->
+      <trans-unit>
+        <source>The selected track albums have been activated successfully.</source>
+        <target>Wybrane albumy audio zostały aktywowane.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected track album has been activated successfully.</source>
+        <target>Wybrany album audio gości został aktywowany.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected track albums have been deactivated successfully.</source>
+        <target>Wybrane albumy audio zostały deaktywowane.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected track album has been deactivated successfully.</source>
+        <target>Wybrany album audio został deaktywowany.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

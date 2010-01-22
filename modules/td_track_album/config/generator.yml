@@ -15,9 +15,54 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
+      fields:
+        name:
+          label: Nazwa
+        description:
+          label: Opis
+        description_short:
+          label: Skrócony opis
+        author:
+          label: Autor
+        place:
+          label: Miejsce
+        released_at:
+          label: Wydano
+        file_cover:
+          label: Okładka
+        active:
+          label: Aktywny
+          help: if the link shall be visible on the frontend website
+        created_at:
+          label: Utworzono
+        updated_at:
+          label: Zmieniono
+      list:
+        title: Track album list
+        batch_actions:
+          _delete: ~
+          activate: ~
+          deactivate: ~
+        object_actions:
+          _edit: ~
+          _delete: ~
+          activate: ~
+          deactivate: ~
+        display: [ active, name, author, released_at, description_short, updated_at ]
+        max_per_page: 10
       filter:  ~
-      form:    ~
-      edit:    ~
-      new:     ~
+      form:
+        fields:
+          name:
+            attributes: { size: 80 }
+          author:
+            attributes: { size: 80 }
+          place:
+            attributes: { size: 80 }
+          description:
+            attributes: { cols: 80, rows: 10 }
+      edit:
+        title: Edit track album
+        display: [ name, author, description, file_cover, released_at, active ]
+      new:
+        title: New track album

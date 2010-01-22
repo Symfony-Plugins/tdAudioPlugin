@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package packagerversion="1.4.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
-  <name>tdGuestbookPlugin</name>
+  <name>tdAudioPlugin</name>
   <channel>plugins.symfony-project.org</channel>
-  <summary>Provides funcionalities for a standard guestbook.</summary>
-  <description>Provides funcionalities for a standard guestbook. This plugin is a part of TD CMF and is based on Doctrine ORM.</description>
+  <summary>Provides easy interface for flash mp3 player to embed in symfony projects.</summary>
+  <description>Provides easy interface for flash mp3 player to embed in symfony projects. This plugin is a part of __TD CMF__ and is based on __Doctrine ORM__.</description>
  <lead>
   <name>Tomasz Ducin</name>
   <user>tkoomzaaskz</user>
   <email>tomasz.ducin@gmail.com</email>
   <active>yes</active>
  </lead>
- <date>2009-12-31</date>
+ <date>2010-01-22</date>
  <time>11:00:00</time>
  <version>
    <release>0.1.0</release>
@@ -30,8 +30,9 @@
        <dir name="doctrine">
          <file name="schema.yml" role="data" />
        </dir>
+       <file name="app.yml" role="data" />
        <file name="routing.yml" role="data" />
-       <file name="tdGuestbookPluginConfiguration.class.php" role="data" />
+       <file name="tdAudioPluginConfiguration.class.php" role="data" />
      </dir>
 
      <dir name="data">
@@ -43,12 +44,14 @@
      <dir name="lib">
        <dir name="filter">
          <dir name="doctrine">
-           <file name="PlugintdGuestbookFormFilter.class.php" role="data" />
+           <file name="PlugintdTrackAlbumFormFilter.class.php" role="data" />
+           <file name="PlugintdTrackFormFilter.class.php" role="data" />
          </dir>
        </dir>
        <dir name="form">
          <dir name="doctrine">
-           <file name="PlugintdGuestbookForm.class.php" role="data" />
+           <file name="PlugintdTrackAlbumForm.class.php" role="data" />
+           <file name="PlugintdTrackForm.class.php" role="data" />
          </dir>
        </dir>
        <dir name="helper">
@@ -56,35 +59,41 @@
        </dir>
        <dir name="model">
          <dir name="doctrine">
-           <file name="PlugintdGuestbook.class.php" role="data" />
-           <file name="PlugintdGuestbookTable.class.php" role="data" />
+           <file name="PlugintdTrack.class.php" role="data" />
+           <file name="PlugintdTrackTable.class.php" role="data" />
+           <file name="PlugintdTrackAlbum.class.php" role="data" />
+           <file name="PlugintdTrackAlbumTable.class.php" role="data" />
          </dir>
        </dir>
      </dir>
 
      <dir name="modules">
-       <dir name="td_guestbook">
+       <dir name="td_track_album">
          <dir name="actions">
            <file name="actions.class.php" role="data" />
          </dir>
          <dir name="config">
            <file name="generator.yml" role="data" />
          </dir>
+         <dir name="i18n">
+           <file name="sf_admin.pl.xml" role="data" />
+         </dir>
          <dir name="lib">
-           <file name="td_guestbookGeneratorConfiguration.class.php" role="data" />
-           <file name="td_guestbookGeneratorHelper.class.php" role="data" />
+           <file name="td_track_albumGeneratorConfiguration.class.php" role="data" />
+           <file name="td_track_albumGeneratorHelper.class.php" role="data" />
          </dir>
          <dir name="templates" />
        </dir>
-       <dir name="tdSampleGuestbook">
+       <dir name="tdSampleAudio">
          <dir name="actions">
            <file name="actions.class.php" role="data" />
          </dir>
+         <dir name="i18n">
+           <file name="td.pl.xml" role="data" />
+         </dir>
          <dir name="templates">
-           <file name="_form.php" role="data" />
-           <file name="editSuccess.php" role="data" />
            <file name="indexSuccess.php" role="data" />
-           <file name="newSuccess.php" role="data" />
+           <file name="showSuccess.php" role="data" />
          </dir>
        </dir>
      </dir>
@@ -98,7 +107,7 @@
          <file name="movie.png" role="data" />
        </dir>
        <dir name="js">
-	 <file name="flowplayer-3.1.4.min.js" role="data" />
+	 <file name="swfobject.js" role="data" />
        </dir>
        <dir name="mp3">
 	 <file name="aladdin_goodbye.mp3" role="data" />
@@ -109,15 +118,12 @@
 	 <file name="concentration.mp3" role="data" />
 	 <file name="correctamundo.mp3" role="data" />
 	 <file name="doh.mp3" role="data" />
-	 <file name="drink_babe.mp3" role="data" />
-	 <file name="end_of_story.mp3" role="data" />
 	 <file name="gameover.mp3" role="data" />
 	 <file name="going_to_do.mp3" role="data" />
 	 <file name="good_morning_vietnam.mp3" role="data" />
 	 <file name="hard_time.mp3" role="data" />
 	 <file name="hello_butthead.mp3" role="data" />
 	 <file name="mail_here.mp3" role="data" />
-	 <file name="example_playlist.xml" role="data" />
        </dir>
        <dir name="swf">
          <file name="playerMultipleList.swf" role="data" />
@@ -149,7 +155,7 @@
     <package>
      <name>tdCorePlugin</name>
      <channel>plugins.symfony-project.org</channel>
-     <min>0.1.1</min>
+     <min>0.1.7</min>
     </package>
    </required>
   </dependencies>
@@ -169,7 +175,7 @@
      <api>beta</api>
     </stability>
     <license uri="http://www.symfony-project.org/license">MIT license</license>
-    <date>2009-12-31</date>
+    <date>2010-01-22</date>
     <license>MIT</license>
     <notes>
      * initial import

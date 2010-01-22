@@ -1,0 +1,4 @@
+all:
+  audio_player:
+    width: 300
+    height: 210

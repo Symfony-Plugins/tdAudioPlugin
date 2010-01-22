@@ -12,5 +12,37 @@
  */
 abstract class PlugintdTrackAlbum extends BasetdTrackAlbum
 {
+  /**
+   * Returns short description of the video.
+   *
+   * @return String - short description.
+   */
+  public function getDescriptionShort()
+  {
+    return mb_substr($this->getDescription(), 0, sfConfig::get('td_audio_short_text_sign_count')).'...';
+  }
 
+  /**
+   * Activates the track album.
+   *
+   * @return True
+   */
+  public function activate()
+  {
+    $this->setActive(true);
+    $this->save();
+    return true;
+  }
+
+  /**
+   * Deactivates the track album.
+   *
+   * @return True
+   */
+  public function deactivate()
+  {
+    $this->setActive(false);
+    $this->save();
+    return true;
+  }
 }

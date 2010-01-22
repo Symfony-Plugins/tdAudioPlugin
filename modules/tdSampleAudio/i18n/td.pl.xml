@@ -13,8 +13,24 @@
         <target>odtwórz album</target>
       </trans-unit>
       <trans-unit>
-        <source></source>
-        <target></target>
+        <source>Name</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Author</source>
+        <target>Autor</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Place</source>
+        <target>Miejsce</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Released at</source>
+        <target>Wydano</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Description</source>
+        <target>Opis</target>
       </trans-unit>
     </body>
   </file>

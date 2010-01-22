@@ -17,5 +17,7 @@ class tdAudioPluginConfiguration extends sfPluginConfiguration
    */
   public function initialize()
   {
+    // track album short description sign count
+    sfConfig::set('td_audio_short_text_sign_count', 200);
   }
 }

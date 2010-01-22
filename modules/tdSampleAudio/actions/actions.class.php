@@ -12,13 +12,16 @@ class tdSampleAudioActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
+    // ading default td_video layout
+    $this->getResponse()->addStylesheet('/tdAudioPlugin/css/td_audio.css');
+
     $this->audios = Doctrine::getTable('tdTrackAlbum')->getActiveAlbumsQuery()->fetchArray();
   }
 
   public function executeShow(sfWebRequest $request)
   {
     // ading default td_video layout
-    $this->getResponse()->addStylesheet('/tdAudioPlugin/css/td_audio');
+    $this->getResponse()->addStylesheet('/tdAudioPlugin/css/td_audio.css');
         
     $results = Doctrine::getTable('tdTrackAlbum')->getActiveAlbumByIdQuery($request->getParameter('id'))->fetchArray();
     $this->audio = $results[0];
