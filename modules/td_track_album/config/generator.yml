@@ -62,9 +62,9 @@ generator:
           <br />
           <strong>Opis</strong>: <div class="text_box">%%description_short%%</div>
           <br />
-          <strong>utworzono</strong>: <i>%%created_at%%</i>
+          <strong>Utworzono</strong>: <i>%%created_at%%</i>
           <br />
-          <strong>zmieniono</strong>: <i>%%updated_at%%</i>
+          <strong>Zmieniono</strong>: <i>%%updated_at%%</i>
       filter:  ~
       form:
         fields:
@@ -75,7 +75,7 @@ generator:
           place:
             attributes: { size: 80 }
           description:
-            attributes: { cols: 80, rows: 10 }
+            attributes: { cols: 80, rows: 16 }
       edit:
         title: Edit track album
         display: [ name, author, description, file_cover, released_at, active ]
