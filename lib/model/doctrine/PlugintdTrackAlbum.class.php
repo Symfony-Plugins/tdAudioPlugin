@@ -19,7 +19,7 @@ abstract class PlugintdTrackAlbum extends BasetdTrackAlbum
    */
   public function getDescriptionShort()
   {
-    return mb_substr($this->getDescription(), 0, sfConfig::get('td_audio_short_text_sign_count')).'...';
+    return tdTools::getMbShortenedString($this->getDescription(), sfConfig::get('td_audio_short_text_sign_count'));
   }
 
   /**

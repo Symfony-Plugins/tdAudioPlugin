@@ -10,10 +10,10 @@
   <email>tomasz.ducin@gmail.com</email>
   <active>yes</active>
  </lead>
- <date>2010-01-22</date>
+ <date>2010-01-24</date>
  <time>11:00:00</time>
  <version>
-   <release>0.1.0</release>
+   <release>0.1.1</release>
    <api>0.1.0</api>
  </version>
  <stability>
@@ -155,7 +155,7 @@
     <package>
      <name>tdCorePlugin</name>
      <channel>plugins.symfony-project.org</channel>
-     <min>0.1.7</min>
+     <min>0.1.8</min>
     </package>
    </required>
   </dependencies>
@@ -164,6 +164,25 @@
   </phprelease>
 
   <changelog>
+
+   <release>
+    <version>
+     <release>0.1.1</release>
+     <api>0.1.0</api>
+    </version>
+    <stability>
+     <release>beta</release>
+     <api>beta</api>
+    </stability>
+    <license uri="http://www.symfony-project.org/license">MIT license</license>
+    <date>2010-01-24</date>
+    <license>MIT</license>
+    <notes>
+     * fixed short description method
+     * track album admin updated
+     * documentation updated
+    </notes>
+   </release>
 
    <release>
     <version>

@@ -1,7 +1,7 @@
-tdGuestbookPlugin
+tdAudioPlugin
 ======================
 
-Provides funcionalities for a standard guestbook.
+Provides easy interface for flash mp3 player to embed in symfony projects.
 
 This plugin is a part of __TD CMS__ and is based on __Doctrine ORM__.
 
@@ -11,31 +11,62 @@ Installation
 Install the plugin via the subversion repository by executing the following
 command from the project root directory:
 
-    $ svn co http://svn.symfony-project.com/plugins/tdGuestbookPlugin/trunk plugins/tdGuestbookPlugin
+    $ svn co http://svn.symfony-project.com/plugins/tdAudioPlugin/trunk plugins/tdAudioPlugin
 
 or by using the default symfony plugin install command:
 
-    $ ./symfony plugin:install -s beta tdGuestbookPlugin
+    $ ./symfony plugin:install -s beta tdAudioPlugin
 
-as the actual release is in its beta stage.
+as the actual release is in its beta stage. Run
+
+    $ ./symfony plugin:publish-assets
+
+to enable all needed media files (which in this case are more or less
+everything).
 
 Usage
 =====
 
+  * Enable the __track_td_album__ module in your backend app and enable the
+    __tdSampleAudio__ module in your frontend (or make a copy of it to modify,
+    if the plugin was installed using SVN).
+
+  * Fixtures are provided with the plugin - more than 10 small mp3 files (thanks
+    to  [simplythebest.net](http://www.simplythebest.net) site). Run following
+    commands:
+
+        $ ./symfony doctrine:build --all
+
+    and
+
+        $ ./symfony doctrine:data-load
+
+    and run the following URL in your browser:
+
+        http://your-project/audio
+
+    to see a demo of the mp3 flash player. It should look something like this:
+
+    ![Albums_list](http://img651.imageshack.us/img651/9168/tdaudioplugin.png "Albums list")
+
+    ![Album_tracks](http://img19.imageshack.us/img19/2228/tdaudioplugin2.png "Album tracks")
+
+    (those screenshots have been made from an example website).
+
 Configuration
 =============
 
-You can modify settings of the tdGuestbookPlugin in the
-__config/tdGUestbookPluginConfiguration.class.php__ file:
+You can modify settings of the tdAudioPlugin in the
+__config/tdAudioPluginConfiguration.class.php__ file:
 
-  * _td_guestbook_entries_per_page_ - number of guestbook entries shown on each
-    page.
+  * _td_audio_short_text_sign_count_ - character count of a short track album
+    descrtiption version
 
 Translations
 ============
 
-You may translate tdGuestbook module to your own language by creating
-__td_guestbook.XX.xml__ file under _modules/tdGuestbook/i18n_
+You may translate tdAudio module to your own language by creating
+__td.XX.xml__ file under _modules/tdSampleAudio/i18n_
 directory (where XX is the language code). So far, English language is the
 default one and additionally Polish translationis provided.
 

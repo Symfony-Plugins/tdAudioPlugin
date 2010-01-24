@@ -50,6 +50,21 @@ generator:
           deactivate: ~
         display: [ active, name, author, released_at, description_short, updated_at ]
         max_per_page: 10
+        layout: stacked
+        params: |
+          <img src="/tdAudioPlugin/images/%%file_cover%%" />
+          <br />
+          <strong>Nazwa</strong>: <i>%%name%%</i> %%active%%
+          <br />
+          <strong>Autor</strong>: <i>%%author%%</i>
+          <br />
+          <strong>Wydano</strong>: <i>%%released_at%%</i>
+          <br />
+          <strong>Opis</strong>: <div class="text_box">%%description_short%%</div>
+          <br />
+          <strong>utworzono</strong>: <i>%%created_at%%</i>
+          <br />
+          <strong>zmieniono</strong>: <i>%%updated_at%%</i>
       filter:  ~
       form:
         fields:
