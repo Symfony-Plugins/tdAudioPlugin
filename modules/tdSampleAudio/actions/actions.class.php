@@ -47,7 +47,7 @@ class tdSampleAudioActions extends sfActions
     foreach ($tracks as $track)
     {
         $xml .= "    <track>\n";
-        $xml .= "       <path>/tdAudioPlugin/mp3/{$track['file']}</path>\n";
+        $xml .= "       <path>/uploads/td/audio/{$track['file']}</path>\n";
         $xml .= "       <title>Track {$track['position']} - {$track['title']}</title>\n";
         $xml .= "   </track>\n";
     }

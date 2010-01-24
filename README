@@ -1,5 +1,5 @@
 tdAudioPlugin
-======================
+=============
 
 Provides easy interface for flash mp3 player to embed in symfony projects.
 
@@ -41,7 +41,17 @@ Usage
 
         $ ./symfony doctrine:data-load
 
-    and run the following URL in your browser:
+    Now you have to create a directory for audio uploads:
+
+        $ mkdir web/uploads/td/audio
+
+    and make it writeable:
+
+        $ chmod 777 web/uploads/td/audio
+
+    Now you have to copy the mp3 sample files from _tdAudioPlugin/data/samples_
+    to the audio upload directory created above. Everything is ready to run the
+    following URL in your browser:
 
         http://your-project/audio
 
@@ -58,6 +68,8 @@ Configuration
 
 You can modify settings of the tdAudioPlugin in the
 __config/tdAudioPluginConfiguration.class.php__ file:
+
+  * _td_audio_upload_dir_ - upload dir of all audio files
 
   * _td_audio_short_text_sign_count_ - character count of a short track album
     descrtiption version
