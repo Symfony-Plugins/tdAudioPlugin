@@ -180,6 +180,9 @@
     <notes>
      * NOT RELEASED YET
      * updated random audio albums - fixed blocked website bug
+     * added album cover upload directory
+     * track forms embedded in album form
+     * fixed album cover upload directory (with setup)
     </notes>
    </release>
 

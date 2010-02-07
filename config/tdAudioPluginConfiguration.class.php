@@ -20,6 +20,9 @@ class tdAudioPluginConfiguration extends sfPluginConfiguration
     // audio files upload dir
     sfConfig::set('td_audio_upload_dir', sfConfig::get('sf_web_dir').'/uploads/td/audio');
 
+    // audio album cover upload dir
+    sfConfig::set('td_audio_cover_upload_dir', sfConfig::get('sf_web_dir').'/uploads/td/cover');
+
     // track album short description sign count
     sfConfig::set('td_audio_short_text_sign_count', 200);
   }

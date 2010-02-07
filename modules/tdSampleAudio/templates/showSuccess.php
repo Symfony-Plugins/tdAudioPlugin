@@ -5,7 +5,7 @@
 <ul id="audio">
   <li class="single">
       <div class="cover">
-        <?php echo image_tag(audio_path('images/'.$audio['file_cover'])) ?>
+        <?php echo image_tag('/uploads/td/cover/'.$audio['file_cover']) ?>
       </div>
       <div class="rest">
         <div class="released_at">

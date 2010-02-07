@@ -41,13 +41,13 @@ Usage
 
         $ ./symfony doctrine:data-load
 
-    Now you have to create a directory for audio uploads:
+    Now you have to create upload directories for audio and cover files:
 
-        $ mkdir web/uploads/td/audio
+        $ mkdir web/uploads/td/audio web/uploads/td/cover
 
     and make it writeable:
 
-        $ chmod 777 web/uploads/td/audio
+        $ chmod 777 web/uploads/td/audio web/uploads/td/cover
 
     Now you have to copy the mp3 sample files from _tdAudioPlugin/data/samples_
     to the audio upload directory created above. Everything is ready to run the

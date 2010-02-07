@@ -37,6 +37,11 @@ generator:
           label: Utworzono
         updated_at:
           label: Zmieniono
+# embedded forms and relations
+        Tracks:
+          label: Utwory
+        new:
+          label: Nowy utwór
       list:
         title: Track album list
         batch_actions:
@@ -78,6 +83,6 @@ generator:
             attributes: { cols: 80, rows: 16 }
       edit:
         title: Edit track album
-        display: [ name, author, description, file_cover, released_at, active ]
+        display: [ name, author, description, file_cover, released_at, active, Tracks, new ]
       new:
         title: New track album
