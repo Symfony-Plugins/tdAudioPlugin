@@ -10,10 +10,10 @@
   <email>tomasz.ducin@gmail.com</email>
   <active>yes</active>
  </lead>
- <date>2010-02-07</date>
+ <date>2010-02-08</date>
  <time>11:00:00</time>
  <version>
-   <release>0.1.3</release>
+   <release>0.1.4</release>
    <api>0.1.0</api>
  </version>
  <stability>
@@ -54,6 +54,8 @@
 	 <file name="hard_time.mp3" role="data" />
 	 <file name="hello_butthead.mp3" role="data" />
 	 <file name="mail_here.mp3" role="data" />
+         <file name="cartoon.png" role="data" />
+         <file name="movie.png" role="data" />
        </dir>
      </dir>
 
@@ -118,10 +120,6 @@
        <dir name="css">
          <file name="td_audio.css" role="data" />
        </dir>
-       <dir name="images">
-         <file name="cartoon.png" role="data" />
-         <file name="movie.png" role="data" />
-       </dir>
        <dir name="js">
 	 <file name="swfobject.js" role="data" />
        </dir>
@@ -175,10 +173,27 @@
      <api>beta</api>
     </stability>
     <license uri="http://www.symfony-project.org/license">MIT license</license>
-    <date>2010-02-07</date>
+    <date>2010-02-08</date>
     <license>MIT</license>
     <notes>
      * NOT RELEASED YET
+     * removed web/images directory containing sample album cover files
+    </notes>
+   </release>
+
+   <release>
+    <version>
+     <release>0.1.3</release>
+     <api>0.1.0</api>
+    </version>
+    <stability>
+     <release>beta</release>
+     <api>beta</api>
+    </stability>
+    <license uri="http://www.symfony-project.org/license">MIT license</license>
+    <date>2010-02-07</date>
+    <license>MIT</license>
+    <notes>
      * updated random audio albums - fixed blocked website bug
      * added album cover upload directory
      * track forms embedded in album form
