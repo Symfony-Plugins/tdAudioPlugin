@@ -13,27 +13,14 @@ abstract class PlugintdTrackAlbumForm extends BasetdTrackAlbumForm
   public function setup()
   {
     parent::setup();
-
     $this->removeFields();
-
     $this->manageWidgets();
-
     $this->manageValidators();
-
     $this->embedRelation('Tracks');
 
     $new_track_form = new tdTrackForm();
     $new_track_form->setDefault('td_track_album_id', $this->object->id);
     $this->embedForm('new', $new_track_form);
-
-//    $this->setValidator('author',
-//      new sfValidatorString(array(), array('required' => 'Musisz podać autora wpisu.')));
-//
-//    $this->setValidator('text',
-//      new sfValidatorString(array(), array('required' => 'Musisz podać treść wpisu.')));
-//
-//    $this->setValidator('email',
-//      new sfValidatorEmail(array('required' => false), array('invalid' => 'Musisz podać poprawny adres E-mail')));
   }
 
   protected function removeFields()
@@ -68,11 +55,16 @@ abstract class PlugintdTrackAlbumForm extends BasetdTrackAlbumForm
     ), array(
       'required' => 'Musisz wybrać plik',
     )));
+
+//    $this->setValidator('text',
+//      new sfValidatorString(array(), array('required' => 'Musisz podać treść wpisu.')));
+//
+//    $this->setValidator('email',
+//      new sfValidatorEmail(array('required' => false), array('invalid' => 'Musisz podać poprawny adres E-mail')));
   }
 
   protected function doBind(array $values)
   {
-//    var_dump($values['new']); exit;
     if ($this->isValid()
             && '' === trim($values['new']['file']['name'])
             && '' === trim($values['new']['title'])
@@ -84,11 +76,11 @@ abstract class PlugintdTrackAlbumForm extends BasetdTrackAlbumForm
 
     if (isset($values['Tracks']))
     {
-      foreach ($values['Tracks'] as $i => $bookmarkValues)
+      foreach ($values['Tracks'] as $i => $trackValues)
       {
-        if (isset($bookmarkValues['delete']) && $bookmarkValues['id'])
+        if (isset($trackValues['delete']) && $trackValues['id'])
         {
-          $this->scheduledForDeletion[$i] = $bookmarkValues['id'];
+          $this->scheduledForDeletion[$i] = $trackValues['id'];
         }
       }
     }
@@ -141,7 +133,7 @@ abstract class PlugintdTrackAlbumForm extends BasetdTrackAlbumForm
     {
       if ($form instanceof sfFormObject)
       {
-        if (!in_array($form->getObject()->getId(), $this->scheduledForDeletion))
+        if (!isset($this->scheduledForDeletion) || !in_array($form->getObject()->getId(), $this->scheduledForDeletion))
         {
           $form->saveEmbeddedForms($con);
           $form->getObject()->save($con);
