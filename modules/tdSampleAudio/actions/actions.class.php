@@ -12,23 +12,28 @@ class tdSampleAudioActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
+    $this->audios = Doctrine::getTable('tdTrackAlbum')
+      ->getActiveAlbumsQuery()
+      ->fetchArray();
+
+    $this->forward404Unless(count($this->audios) > 0);
+
     // ading default td_video layout
     $this->getResponse()->addStylesheet('/tdAudioPlugin/css/td_audio.css');
-
-    $this->audios = Doctrine::getTable('tdTrackAlbum')->getActiveAlbumsQuery()->fetchArray();
   }
 
   public function executeShow(sfWebRequest $request)
   {
-    // ading default td_video layout
-    $this->getResponse()->addStylesheet('/tdAudioPlugin/css/td_audio.css');
-        
-    $results = Doctrine::getTable('tdTrackAlbum')->getActiveAlbumByIdQuery($request->getParameter('id'))->fetchArray();
-    $this->audio = $results[0];
+    $this->forward404Unless($collection = Doctrine::getTable('tdTrackAlbum')
+      ->getActiveAlbumByIdQuery($request->getParameter('id'))
+      ->fetchArray());
+    
+    $this->audio = $collection[0];
 
     // adding js flash embedding script
     $this->getResponse()->addJavascript('/tdAudioPlugin/js/swfobject.js');
-
+    // ading default td_video layout
+    $this->getResponse()->addStylesheet('/tdAudioPlugin/css/td_audio.css');
     // adding default flowplayer stylesheet
     $this->getResponse()->addStylesheet('/tdAudioPlugin/?');
   }
