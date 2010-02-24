@@ -13,73 +13,81 @@ require_once dirname(__FILE__).'/../lib/td_track_albumGeneratorHelper.class.php'
  */
 class td_track_albumActions extends autoTd_track_albumActions
 {
-    /**
-     * Activates selected track albums.
-     *
-     * @param sfWebRequest $request
-     */
-    public function executeBatchActivate(sfWebRequest $request)
+
+  public function executeEdit(sfWebRequest $request)
+  {
+    parent::executeEdit($request);
+
+    // adding js flash embedding script
+    $this->getResponse()->addJavascript('/tdAudioPlugin/js/swfobject.js');
+    // ading default td_video layout
+    $this->getResponse()->addStylesheet('/tdAudioPlugin/css/td_audio.css');
+  }
+
+  /**
+   * Activates selected track albums.
+   *
+   * @param sfWebRequest $request
+   */
+  public function executeBatchActivate(sfWebRequest $request)
+  {
+    $ids = $request->getParameter('ids');
+    $query = Doctrine::getTable('tdTrackAlbum')->getSelectedAlbumsQuery($ids);
+
+    foreach ($query->execute() as $audio)
     {
-        $ids = $request->getParameter('ids');
-        $query = Doctrine::getTable('tdTrackAlbum')->getSelectedAlbumsQuery($ids);
-
-        foreach ($query->execute() as $audio)
-        {
-          $audio->activate(true);
-        }
-
-        $this->getUser()->setFlash('notice', 'The selected track albums have been activated successfully.');
-
-        $this->redirect('@td_track_album');
+      $audio->activate(true);
     }
 
-    /**
-     * Deactivates selected track albums.
-     *
-     * @param sfWebRequest $request
-     */
-    public function executeBatchDeactivate(sfWebRequest $request)
+    $this->getUser()->setFlash('notice', 'The selected track albums have been activated successfully.');
+    $this->redirect('@td_track_album');
+  }
+
+  /**
+   * Deactivates selected track albums.
+   *
+   * @param sfWebRequest $request
+   */
+  public function executeBatchDeactivate(sfWebRequest $request)
+  {
+    $ids = $request->getParameter('ids');
+    $query = Doctrine::getTable('tdTrackAlbum')->getSelectedAlbumsQuery($ids);
+
+    foreach ($query->execute() as $audio)
     {
-        $ids = $request->getParameter('ids');
-        $query = Doctrine::getTable('tdTrackAlbum')->getSelectedAlbumsQuery($ids);
-
-        foreach ($query->execute() as $audio)
-        {
-          $audio->deactivate(true);
-        }
-
-        $this->getUser()->setFlash('notice', 'The selected track albums have been deactivated successfully.');
-
-        $this->redirect('@td_track_album');
+      $audio->deactivate(true);
     }
 
-    /**
-     * Activates selected track album.
-     *
-     * @param sfWebRequest $request
-     */
-    public function executeListActivate(sfWebRequest $request)
-    {
-        $audio = $this->getRoute()->getObject();
-        $audio->activate();
+    $this->getUser()->setFlash('notice', 'The selected track albums have been deactivated successfully.');
+    $this->redirect('@td_track_album');
+  }
 
-        $this->getUser()->setFlash('notice', 'The selected track album has been activated successfully.');
+  /**
+   * Activates selected track album.
+   *
+   * @param sfWebRequest $request
+   */
+  public function executeListActivate(sfWebRequest $request)
+  {
+    $audio = $this->getRoute()->getObject();
+    $audio->activate();
 
-        $this->redirect('@td_track_album');
-    }
+    $this->getUser()->setFlash('notice', 'The selected track album has been activated successfully.');
+    $this->redirect('@td_track_album');
+  }
 
-    /**
-     * Deactivates selected track album.
-     *
-     * @param sfWebRequest $request
-     */
-    public function executeListDeactivate(sfWebRequest $request)
-    {
-        $audio = $this->getRoute()->getObject();
-        $audio->deactivate();
+  /**
+   * Deactivates selected track album.
+   *
+   * @param sfWebRequest $request
+   */
+  public function executeListDeactivate(sfWebRequest $request)
+  {
+    $audio = $this->getRoute()->getObject();
+    $audio->deactivate();
 
-        $this->getUser()->setFlash('notice', 'The selected track album has been deactivated successfully.');
+    $this->getUser()->setFlash('notice', 'The selected track album has been deactivated successfully.');
 
-        $this->redirect('@td_track_album');
-    }
+    $this->redirect('@td_track_album');
+  }
 }

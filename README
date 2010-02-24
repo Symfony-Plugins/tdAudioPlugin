@@ -71,9 +71,6 @@ __config/tdAudioPluginConfiguration.class.php__ file:
 
   * _td_audio_upload_dir_ - upload dir of all audio files
 
-  * _td_audio_short_text_sign_count_ - character count of a short track album
-    descrtiption version
-
 Translations
 ============
 

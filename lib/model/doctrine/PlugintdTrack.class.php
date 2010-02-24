@@ -12,5 +12,15 @@
  */
 abstract class PlugintdTrack extends BasetdTrack
 {
-
+  /**
+   * Attempts to delete the mp3 track file before record is deleted.
+   *
+   * @param Doctrine_Event $event
+   */
+  public function preDelete($event)
+  {
+    $file_path = sfConfig::get('td_audio_upload_dir').'/'.$this->getFile();
+    if (file_exists($file_path))
+      unlink($file_path);
+  }
 }

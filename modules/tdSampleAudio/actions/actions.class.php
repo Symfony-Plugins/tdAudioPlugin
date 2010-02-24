@@ -34,8 +34,6 @@ class tdSampleAudioActions extends sfActions
     $this->getResponse()->addJavascript('/tdAudioPlugin/js/swfobject.js');
     // ading default td_video layout
     $this->getResponse()->addStylesheet('/tdAudioPlugin/css/td_audio.css');
-    // adding default flowplayer stylesheet
-    $this->getResponse()->addStylesheet('/tdAudioPlugin/?');
   }
 
   /**

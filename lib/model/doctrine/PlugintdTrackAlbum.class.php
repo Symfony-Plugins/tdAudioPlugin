@@ -19,7 +19,7 @@ abstract class PlugintdTrackAlbum extends BasetdTrackAlbum
    */
   public function getDescriptionShort()
   {
-    return tdTools::getMbShortenedString($this->getDescription(), sfConfig::get('td_audio_short_text_sign_count'));
+    return tdTools::getMbShortenedString($this->getDescription(), sfConfig::get('td_short_text_sign_count'));
   }
 
   /**
@@ -44,5 +44,18 @@ abstract class PlugintdTrackAlbum extends BasetdTrackAlbum
     $this->setActive(false);
     $this->save();
     return true;
+  }
+
+  /**
+   * Deletes all tracks before deleting the whole album.
+   *
+   * @param Doctrine_Event $event
+   */
+  public function preDelete($event)
+  {
+    foreach($this->getTracks() as $track)
+    {
+      $track->delete();
+    }
   }
 }

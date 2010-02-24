@@ -48,6 +48,9 @@ abstract class PlugintdTrackAlbumForm extends BasetdTrackAlbumForm
     $this->setValidator('author',
       new sfValidatorString(array(), array('required' => 'Musisz podać autora.')));
 
+    $this->setValidator('description',
+      new sfValidatorString(array(), array('required' => 'Musisz podać opis albumu.')));
+
     $this->setValidator('file_cover', new sfValidatorFile(array(
       'required'   => false,
       'path'       => sfConfig::get('td_audio_cover_upload_dir'),
@@ -55,12 +58,6 @@ abstract class PlugintdTrackAlbumForm extends BasetdTrackAlbumForm
     ), array(
       'required' => 'Musisz wybrać plik',
     )));
-
-//    $this->setValidator('text',
-//      new sfValidatorString(array(), array('required' => 'Musisz podać treść wpisu.')));
-//
-//    $this->setValidator('email',
-//      new sfValidatorEmail(array('required' => false), array('invalid' => 'Musisz podać poprawny adres E-mail')));
   }
 
   protected function doBind(array $values)
@@ -101,9 +98,8 @@ abstract class PlugintdTrackAlbumForm extends BasetdTrackAlbumForm
       {
         unset($values['Tracks'][$index]);
         unset($this->object['Tracks'][$index]);
-        $track = Doctrine::getTable('tdTrack')->findOneById($id);
-        unlink(sfConfig::get('td_audio_upload_dir').'/'.$track->getFile());
-        $track->delete();
+        // removing track file inside tdTrack preDelete method
+        Doctrine::getTable('tdTrack')->findOneById($id)->delete();
       }
     }
 

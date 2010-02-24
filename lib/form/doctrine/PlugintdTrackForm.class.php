@@ -15,6 +15,7 @@ abstract class PlugintdTrackForm extends BasetdTrackForm
   {
     parent::setup();
     $this->removeFields();
+    $this->manageFields();
     $this->manageHidden();
     $this->manageDelete();
     $this->manageFiles();
@@ -24,6 +25,15 @@ abstract class PlugintdTrackForm extends BasetdTrackForm
   protected function removeFields()
   {
     unset($this['created_at'], $this['updated_at']);
+  }
+
+  protected function manageFields()
+  {
+    $this->setWidget('description',
+      new sfWidgetFormTextarea(array(), array()));
+
+    $this->setValidator('title',
+      new sfValidatorString(array(), array('required' => 'Musisz podać tytuł.')));
   }
 
   protected function manageHidden()

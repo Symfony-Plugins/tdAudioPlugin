@@ -57,7 +57,7 @@ generator:
         max_per_page: 10
         layout: stacked
         params: |
-          <img src="/tdAudioPlugin/images/%%file_cover%%" />
+          <img src="/uploads/td/cover/%%file_cover%%" />
           <br />
           <strong>Nazwa</strong>: <i>%%name%%</i> %%active%%
           <br />
@@ -83,6 +83,6 @@ generator:
             attributes: { cols: 80, rows: 16 }
       edit:
         title: Edit track album
-        display: [ name, author, description, file_cover, released_at, active, Tracks, new ]
+        display: [ name, author, description, file_cover, _album_play, released_at, active, Tracks, new ]
       new:
         title: New track album
