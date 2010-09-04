@@ -10,6 +10,20 @@ td_sample_track_album_show_xml:
   url:   /audio/xml/:id.xml
   param: { module: tdSampleAudio, action: albumXMLInfo }
 
+# ajax actions
+
+ajax_audio_activate:
+  url:   /ajax-audio-activate/:id
+  param: { module: td_track_album, action: activate }
+  requirements:
+    id: \d+
+
+ajax_audio_deactivate:
+  url:   /ajax-audio-deactivate/:id
+  param: { module: td_track_album, action: deactivate }
+  requirements:
+    id: \d+
+
 td_track_album:
   class: sfDoctrineRouteCollection
   options:

@@ -63,31 +63,28 @@ class td_track_albumActions extends autoTd_track_albumActions
   }
 
   /**
-   * Activates selected track album.
+   * Activates an album from admin generator list using AJAX.
    *
    * @param sfWebRequest $request
+   * @return Partial - generated partial enabling album deactivating (switch).
    */
-  public function executeListActivate(sfWebRequest $request)
+  public function executeActivate(sfWebRequest $request)
   {
-    $audio = $this->getRoute()->getObject();
-    $audio->activate();
-
-    $this->getUser()->setFlash('notice', 'The selected track album has been activated successfully.');
-    $this->redirect('@td_track_album');
+    $album = Doctrine::getTable('tdTrackAlbum')->findOneById($request->getParameter('id'));
+    $album->activate();
+    return $this->renderPartial('td_track_album/ajax_deactivate', array('td_track_album' => $album));
   }
 
   /**
-   * Deactivates selected track album.
+   * Deactivates an album from admin generator list using AJAX.
    *
    * @param sfWebRequest $request
+   * @return Partial - generated partial enabling album activating (switch).
    */
-  public function executeListDeactivate(sfWebRequest $request)
+  public function executeDeactivate(sfWebRequest $request)
   {
-    $audio = $this->getRoute()->getObject();
-    $audio->deactivate();
-
-    $this->getUser()->setFlash('notice', 'The selected track album has been deactivated successfully.');
-
-    $this->redirect('@td_track_album');
+    $album = Doctrine::getTable('tdTrackAlbum')->findOneById($request->getParameter('id'));
+    $album->deactivate();
+    return $this->renderPartial('td_track_album/ajax_activate', array('td_track_album' => $album));
   }
 }

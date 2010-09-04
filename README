@@ -63,6 +63,13 @@ Usage
 
     (those screenshots have been made from an example website).
 
+  * To use the activate/deactivate AJAX interface in the backend td_track_album
+    module, remember to enable the __graphics__ module of the __tdCorePlugin__
+    inside your settings.yml file (see tdCorePlugin README).
+
+        [php]
+        enabled_modules: [ ..., graphics ]
+
 Configuration
 =============
 
